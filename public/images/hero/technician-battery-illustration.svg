@@ -1,0 +1,348 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="skyBlob" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#ffc933" stop-opacity="0.35" />
+      <stop offset="60%" stop-color="#DDEEF2" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#DDEEF2" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="carBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#DDEEF2" />
+    </linearGradient>
+    <linearGradient id="hoodGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#DDEEF2" />
+    </linearGradient>
+    <filter id="softShadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0E1F3F" flood-opacity="0.18" />
+    </filter>
+    <filter id="blurSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" />
+    </filter>
+    <linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#101d36" />
+      <stop offset="100%" stop-color="#202f4e" />
+    </linearGradient>
+    <pattern id="asphaltGrain" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(12)">
+      <circle cx="4" cy="6" r="1.1" fill="#FFFFFF" opacity="0.05" />
+      <circle cx="16" cy="14" r="1.4" fill="#FFFFFF" opacity="0.04" />
+      <circle cx="22" cy="3" r="0.9" fill="#000000" opacity="0.18" />
+      <circle cx="10" cy="20" r="1" fill="#000000" opacity="0.14" />
+    </pattern>
+  </defs>
+
+  <style>
+    <![CDATA[
+      .old-battery, .new-battery, .spark-landing {
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+      .old-battery {
+        animation: oldBatteryRemove 10s ease-in-out infinite;
+      }
+      .new-battery {
+        animation: newBatteryTravel 10s ease-in-out infinite;
+      }
+      .spark-landing {
+        animation: sparkLanding 10s ease-in-out infinite;
+      }
+      .mechanic-body {
+        transform-box: fill-box;
+        transform-origin: 50% 100%;
+        animation: bodySway 10s ease-in-out infinite;
+      }
+      .limb-near {
+        transform-box: fill-box;
+        transform-origin: 3% 0%;
+        animation: limbNearWork 10s ease-in-out infinite;
+      }
+      .limb-far {
+        transform-box: fill-box;
+        transform-origin: 2% 9%;
+        animation: limbFarWork 10s ease-in-out infinite;
+      }
+      @keyframes bodySway {
+        0%, 8%    { transform: translate(0,0) rotate(0deg); }
+        20%       { transform: translate(-2px,-4px) rotate(-1.5deg); }
+        30%       { transform: translate(-1px,-2px) rotate(-0.8deg); }
+        40%, 56%  { transform: translate(0,0) rotate(0deg); }
+        66%       { transform: translate(2px,-3px) rotate(1.5deg); }
+        78%       { transform: translate(1px,-2px) rotate(1deg); }
+        92%, 100% { transform: translate(0,0) rotate(0deg); }
+      }
+      @keyframes limbNearWork {
+        0%, 8%    { transform: rotate(0deg); }
+        20%       { transform: rotate(-18deg); }
+        30%       { transform: rotate(-8deg); }
+        40%, 56%  { transform: rotate(0deg); }
+        66%       { transform: rotate(-14deg); }
+        74%       { transform: rotate(-20deg); }
+        84%       { transform: rotate(-14deg); }
+        92%, 100% { transform: rotate(0deg); }
+      }
+      @keyframes limbFarWork {
+        0%, 8%    { transform: rotate(0deg); }
+        20%       { transform: rotate(-9deg); }
+        30%       { transform: rotate(-4deg); }
+        40%, 56%  { transform: rotate(0deg); }
+        66%       { transform: rotate(-7deg); }
+        74%       { transform: rotate(-10deg); }
+        84%       { transform: rotate(-7deg); }
+        92%, 100% { transform: rotate(0deg); }
+      }
+      @keyframes oldBatteryRemove {
+        0%        { transform: translate(0,0) rotate(0deg); opacity: 1; }
+        10%       { transform: translate(0,0) rotate(0deg); opacity: 1; }
+        28%       { transform: translate(-18px,-55px) rotate(-14deg); opacity: 0; }
+        100%      { transform: translate(-18px,-55px) rotate(-14deg); opacity: 0; }
+      }
+      @keyframes newBatteryTravel {
+        0%        { transform: translate(0,0) rotate(0deg); opacity: 1; }
+        40%       { transform: translate(0,0) rotate(0deg); opacity: 1; }
+        58%       { transform: translate(119px,-52px) rotate(-6deg); opacity: 1; }
+        74%       { transform: translate(237px,-105px) rotate(0deg); opacity: 1; }
+        94%       { transform: translate(237px,-105px) rotate(0deg); opacity: 1; }
+        97%       { transform: translate(237px,-105px) rotate(0deg); opacity: 0; }
+        100%      { transform: translate(0,0) rotate(0deg); opacity: 0; }
+      }
+      @keyframes sparkLanding {
+        0%, 72%   { opacity: 0; transform: scale(0.5); }
+        78%       { opacity: 1; transform: scale(1.3); }
+        84%       { opacity: 0; transform: scale(0.6); }
+        88%       { opacity: 1; transform: scale(1.1); }
+        94%, 100% { opacity: 0; transform: scale(0.5); }
+      }
+    ]]>
+  </style>
+
+  <!-- Background glow: turquoise core fading through light grey-blue -->
+  <ellipse cx="610" cy="360" rx="520" ry="320" fill="url(#skyBlob)" />
+
+  <!-- Dubai-inspired skyline silhouette -->
+  <g fill="#0E1F3F" opacity="0.22">
+    <rect x="190" y="430" width="34" height="110" rx="3" />
+    <rect x="235" y="400" width="26" height="140" rx="3" />
+    <rect x="272" y="450" width="40" height="90" rx="3" />
+    <rect x="330" y="415" width="30" height="125" rx="3" />
+    <polygon points="390,540 390,330 410,300 430,330 430,540" />
+    <rect x="585" y="460" width="28" height="80" rx="3" />
+    <rect x="770" y="420" width="32" height="120" rx="3" />
+    <rect x="812" y="445" width="24" height="95" rx="3" />
+    <rect x="845" y="400" width="30" height="140" rx="3" />
+    <rect x="905" y="455" width="36" height="85" rx="3" />
+    <rect x="955" y="430" width="24" height="110" rx="3" />
+    <rect x="990" y="465" width="30" height="75" rx="3" />
+  </g>
+
+  <!-- Ground shadows -->
+  <ellipse cx="820" cy="562" rx="230" ry="22" fill="#0E1F3F" opacity="0.16" filter="url(#blurSoft)" />
+  <ellipse cx="480" cy="586" rx="160" ry="16" fill="#0E1F3F" opacity="0.14" filter="url(#blurSoft)" />
+  <ellipse cx="225" cy="592" rx="100" ry="12" fill="#0E1F3F" opacity="0.12" filter="url(#blurSoft)" />
+
+  <!-- Road -->
+  <g>
+    <!-- curb / sidewalk edge -->
+    <rect x="0" y="549" width="1200" height="9" fill="#C7CDD6" opacity="0.85" />
+    <rect x="0" y="549" width="1200" height="2" fill="#0E1F3F" opacity="0.3" />
+
+    <!-- asphalt surface -->
+    <rect x="0" y="558" width="1200" height="142" fill="url(#roadGrad)" />
+    <rect x="0" y="558" width="1200" height="142" fill="url(#asphaltGrain)" />
+
+    <!-- ambient shadow pooling under the vehicle -->
+    <ellipse cx="830" cy="600" rx="260" ry="26" fill="#000000" opacity="0.15" filter="url(#blurSoft)" />
+
+    <!-- lane edge line -->
+    <rect x="0" y="568" width="1200" height="3" fill="#FFFFFF" opacity="0.45" />
+
+    <!-- center dashed line -->
+    <line x1="0" y1="629" x2="1200" y2="629" stroke="#ffc933" stroke-width="6" stroke-dasharray="42,30" opacity="0.9" />
+  </g>
+
+  <!-- ===================== TOOLBOX ===================== -->
+  <g>
+    <path d="M150,545 L168,500 L278,500 L292,545 Z" fill="#0E1F3F" opacity="0.9" />
+    <rect x="150" y="545" width="142" height="48" rx="6" fill="#0E1F3F" />
+    <rect x="150" y="545" width="142" height="10" fill="#ffc933" />
+    <rect x="205" y="488" width="32" height="16" rx="4" fill="#0E1F3F" />
+    <!-- wrench -->
+    <g transform="rotate(-18 221 520)">
+      <rect x="175" y="513" width="92" height="10" rx="5" fill="#FFFFFF" />
+      <circle cx="175" cy="518" r="13" fill="none" stroke="#FFFFFF" stroke-width="7" />
+      <circle cx="267" cy="518" r="13" fill="none" stroke="#FFFFFF" stroke-width="7" />
+    </g>
+  </g>
+
+  <!-- ===================== SPARE BATTERY ON GROUND (travels into the car) ===================== -->
+  <g class="new-battery">
+    <rect x="315" y="515" width="100" height="62" rx="8" fill="#ffc933" />
+    <rect x="315" y="548" width="100" height="16" fill="#FFFFFF" />
+    <rect x="332" y="503" width="14" height="14" rx="3" fill="#0E1F3F" />
+    <rect x="384" y="503" width="14" height="14" rx="3" fill="#0E1F3F" />
+    <rect x="336" y="525" width="6" height="18" fill="#FFFFFF" />
+    <rect x="327" y="534" width="24" height="6" fill="#FFFFFF" />
+    <rect x="390" y="534" width="24" height="6" fill="#FFFFFF" />
+  </g>
+
+  <!-- ===================== CAR (SUV, hood open) ===================== -->
+  <g>
+    <!-- body -->
+    <path d="M650,520
+             L650,440
+             Q650,398 682,390
+             L705,386
+             L740,330
+             Q746,318 762,315
+             L958,315
+             Q988,315 1000,336
+             L1016,420
+             Q1022,460 1016,500
+             L1016,520 Z"
+          fill="url(#carBody)" />
+
+    <!-- side accent stripe -->
+    <path d="M668,498 L1000,498 L1000,506 L668,506 Z" fill="#0E1F3F" opacity="0.85" />
+
+    <!-- window -->
+    <path d="M752,332 Q758,324 770,324 L952,324 Q972,324 980,340 L985,372 L748,372 Z"
+          fill="#DDEEF2" opacity="0.9" />
+    <rect x="862" y="324" width="6" height="48" fill="#0E1F3F" opacity="0.5" />
+
+    <!-- roof rails -->
+    <rect x="782" y="308" width="152" height="5" rx="2.5" fill="#0E1F3F" opacity="0.8" />
+    <rect x="792" y="299" width="6" height="11" rx="2" fill="#0E1F3F" opacity="0.8" />
+    <rect x="918" y="299" width="6" height="11" rx="2" fill="#0E1F3F" opacity="0.8" />
+
+    <!-- door handle -->
+    <rect x="905" y="430" width="26" height="7" rx="3" fill="#0E1F3F" opacity="0.5" />
+
+    <!-- headlight -->
+    <rect x="648" y="448" width="14" height="16" rx="6" fill="#ffc933" />
+
+    <!-- engine bay cavity (revealed by open hood), nested inside the body outline -->
+    <path d="M658,396 L700,390 L700,460 Q700,468 692,468 L666,468 Q658,468 658,460 Z"
+          fill="#0E1F3F" />
+    <rect x="668" y="404" width="26" height="36" rx="4" fill="#0E1F3F" opacity="0.6" />
+
+    <!-- open hood flap: base edge shares exact coordinates with the cavity's top edge, so it reads as hinged, not floating -->
+    <path d="M658,396 L700,390 L685,305 L633,311 Z" fill="url(#hoodGrad)" filter="url(#softShadow)" />
+    <path d="M658,396 L633,311 L641,310 L662,394 Z" fill="#0E1F3F" opacity="0.12" />
+
+    <!-- wheels -->
+    <g>
+      <circle cx="700" cy="520" r="46" fill="#0E1F3F" />
+      <circle cx="700" cy="520" r="21" fill="#FFFFFF" />
+      <circle cx="700" cy="520" r="7" fill="#DDEEF2" />
+    </g>
+    <g>
+      <circle cx="958" cy="520" r="46" fill="#0E1F3F" />
+      <circle cx="958" cy="520" r="21" fill="#FFFFFF" />
+      <circle cx="958" cy="520" r="7" fill="#DDEEF2" />
+    </g>
+  </g>
+
+  <!-- ===================== TECHNICIAN (kneeling) ===================== -->
+  <g transform="translate(55,0)">
+    <!-- whole figure sways slightly with the effort of the swap, so nothing in the pose ever separates -->
+    <g class="mechanic-body">
+      <!-- back leg (folded, knee on ground) -->
+      <path d="M452,470 Q438,512 452,556 Q460,576 494,580 L512,560 Q500,520 486,486 Z" fill="#0E1F3F" opacity="0.85" />
+      <ellipse cx="500" cy="580" rx="26" ry="11" fill="#0E1F3F" />
+
+      <!-- front leg (bent, foot flat forward) -->
+      <path d="M452,468 L536,506 L520,534 L440,492 Z" fill="#0E1F3F" />
+      <path d="M536,506 L566,566 L540,580 L516,534 Z" fill="#0E1F3F" />
+      <ellipse cx="562" cy="582" rx="28" ry="11" fill="#0E1F3F" />
+
+      <!-- torso -->
+      <path d="M440,478 Q432,428 460,398 Q478,380 506,386 L522,436 Q518,468 496,490 Z" fill="#0E1F3F" />
+
+      <!-- reflective stripe across the torso -->
+      <path d="M452,432 L508,398 L514,408 L458,442 Z" fill="#ffc933" />
+
+      <!-- collar -->
+      <path d="M478,388 Q492,378 506,388 L500,402 Q492,398 484,402 Z" fill="#FFFFFF" />
+
+      <!-- far arm + hand: pivots from the shoulder so it never detaches from the torso -->
+      <g class="limb-far">
+        <path d="M502,392 Q552,398 596,436 Q604,444 596,452 Q550,416 498,404 Z" fill="#0E1F3F" opacity="0.85" />
+        <circle cx="596" cy="446" r="13" fill="#F2C39B" />
+      </g>
+
+      <!-- near arm + hand: the working hand, pivots from the shoulder to lift the old battery out and seat the new one -->
+      <g class="limb-near">
+        <path d="M498,404 Q538,420 562,454 Q568,464 558,470 Q534,438 494,420 Z" fill="#0E1F3F" />
+        <circle cx="559" cy="463" r="13" fill="#F2C39B" />
+      </g>
+
+      <!-- head -->
+      <circle cx="492" cy="366" r="33" fill="#F2C39B" />
+
+      <!-- ear -->
+      <circle cx="462" cy="370" r="6" fill="#F2C39B" />
+
+      <!-- cap -->
+      <path d="M456,358 Q460,322 492,320 Q524,322 528,358 Q492,346 456,358 Z" fill="#ffc933" />
+      <rect x="454" y="354" width="76" height="12" rx="6" fill="#FFFFFF" />
+      <path d="M522,356 Q556,356 566,368 Q554,374 520,368 Z" fill="#0E1F3F" />
+
+      <!-- face -->
+      <circle cx="480" cy="368" r="4" fill="#0E1F3F" />
+      <circle cx="502" cy="368" r="4" fill="#0E1F3F" />
+      <path d="M478,382 Q492,394 506,382" fill="none" stroke="#0E1F3F" stroke-width="3.5" stroke-linecap="round" />
+      <circle cx="470" cy="380" r="6" fill="#ffc933" opacity="0.35" />
+      <circle cx="512" cy="380" r="6" fill="#ffc933" opacity="0.35" />
+    </g>
+  </g>
+
+  <!-- ===================== OLD BATTERY (removed from the tray) ===================== -->
+  <g transform="translate(55,0)">
+    <g class="old-battery">
+      <rect x="552" y="410" width="78" height="58" rx="8" fill="#56627A" filter="url(#softShadow)" />
+      <rect x="552" y="444" width="78" height="16" fill="#0E1F3F" />
+      <rect x="570" y="398" width="15" height="15" rx="3" fill="#0E1F3F" />
+      <rect x="600" y="398" width="15" height="15" rx="3" fill="#0E1F3F" />
+      <!-- plus terminal -->
+      <rect x="574" y="421" width="7" height="18" fill="#FFFFFF" />
+      <rect x="565" y="430" width="25" height="7" fill="#FFFFFF" />
+      <!-- minus terminal -->
+      <rect x="598" y="430" width="25" height="7" fill="#FFFFFF" />
+    </g>
+
+    <!-- spark pulse when the new battery lands in the tray -->
+    <g class="spark-landing">
+      <circle cx="577" cy="407" r="6" fill="#ffc933" />
+      <circle cx="607" cy="407" r="6" fill="#ffc933" />
+    </g>
+  </g>
+
+  <!-- ===================== FLOATING ICON BADGES ===================== -->
+  <!-- Lightning bolt -->
+  <g>
+    <circle cx="150" cy="150" r="42" fill="#FFFFFF" filter="url(#softShadow)" />
+    <path d="M158,114 L128,160 L148,160 L142,188 L176,142 L154,142 Z" fill="#ffc933" />
+  </g>
+
+  <!-- 24/7 clock -->
+  <g>
+    <circle cx="1058" cy="150" r="42" fill="#FFFFFF" filter="url(#softShadow)" />
+    <circle cx="1058" cy="142" r="22" fill="none" stroke="#0E1F3F" stroke-width="5" />
+    <line x1="1058" y1="142" x2="1058" y2="128" stroke="#0E1F3F" stroke-width="4" stroke-linecap="round" />
+    <line x1="1058" y1="142" x2="1068" y2="148" stroke="#0E1F3F" stroke-width="4" stroke-linecap="round" />
+    <text x="1058" y="178" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#0E1F3F">24/7</text>
+  </g>
+
+  <!-- Shield (warranty) -->
+  <g>
+    <circle cx="120" cy="470" r="42" fill="#FFFFFF" filter="url(#softShadow)" />
+    <path d="M120,446 L142,456 L142,476 Q142,494 120,502 Q98,494 98,476 L98,456 Z" fill="#0E1F3F" />
+    <path d="M110,474 L117,482 L132,463" fill="none" stroke="#ffc933" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Location pin (onsite) -->
+  <g>
+    <circle cx="1096" cy="478" r="42" fill="#FFFFFF" filter="url(#softShadow)" />
+    <path d="M1096,452 Q1118,452 1118,474 Q1118,492 1096,508 Q1074,492 1074,474 Q1074,452 1096,452 Z" fill="#0E1F3F" />
+    <circle cx="1096" cy="474" r="9" fill="#ffc933" />
+  </g>
+</svg>
