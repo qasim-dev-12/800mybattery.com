@@ -1,4 +1,6 @@
 import Link from "next/link";
+import CountUp from "./CountUp";
+import HeroIllustration from "./HeroIllustration";
 
 const TrustIntro = () => {
   return (
@@ -6,21 +8,21 @@ const TrustIntro = () => {
       <div className="container">
         <div className="-mx-4 flex flex-wrap items-center">
           <div className="w-full px-4 lg:w-1/2">
-            <h2 className="mb-5 text-xl font-bold leading-tight text-black dark:text-white sm:text-3xl md:text-4xl">
+            <h2 className="mb-5 text-xl font-bold leading-tight text-black dark:text-white sm:text-3xl md:text-4xl ti-heading">
               Most Trusted Experts for Emergency New Car Battery Replacement
               in Dubai
             </h2>
-            <p className="mb-8 text-base leading-relaxed text-body-color">
+            <p className="mb-8 text-base leading-relaxed text-body-color ti-paragraph">
               Whether you need an emergency car battery replacement in Dubai
               at 3 AM or want to order an online car battery in Dubai with
               same-day installation, Battery Store delivers a seamless
-              experience across the UAE. Over 15 years and 100,000+ batteries
-              served on time.
+              experience across the UAE. Over 15 years and{" "}
+              <CountUp end={100000} suffix="+" /> batteries served on time.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="custom-btn wobble-btn bg-primary duration-300 ease-in-out hover:bg-primary/80"
+                className="custom-btn ti-cta bg-primary duration-300 ease-in-out hover:bg-primary/80"
               >
                 Discover More
               </Link>
@@ -34,6 +36,9 @@ const TrustIntro = () => {
                 WhatsApp Us
               </a>
             </div>
+          </div>
+          <div className="w-full px-4 lg:w-1/2">
+            <HeroIllustration />
           </div>
         </div>
       </div>
