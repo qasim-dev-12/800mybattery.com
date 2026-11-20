@@ -58,8 +58,8 @@ const brands: Brand[] = [
   },
 ];
 
-const PHONE_TEL = "+971543170355";
-const WHATSAPP_NUMBER = "971543170355";
+const PHONE_TEL = "+971586541274";
+const WHATSAPP_NUMBER = "971586541274";
 const AUTOPLAY_MS = 2500;
 const HOVER_RESUME_DELAY_MS = 3000;
 

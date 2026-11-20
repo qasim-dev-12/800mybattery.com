@@ -7,8 +7,8 @@ import { BrandImage, Section, SplitContent, PrimaryButton, DotList } from "@/com
 import batteryBrands from "@/data/batteryBrands";
 import { notFound } from "next/navigation";
 
-const PHONE = "+971543170355";
-const WHATSAPP = "https://wa.me/971543170355";
+const PHONE = "+971586541274";
+const WHATSAPP = "https://wa.me/971586541274";
 
 export function generateStaticParams() {
   return batteryBrands.map((brand) => ({ slug: brand.slug }));

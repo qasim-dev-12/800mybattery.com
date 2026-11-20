@@ -27,7 +27,7 @@ const TrustIntro = () => {
                 Discover More
               </Link>
               <a
-                href="https://wa.me/971543170355"
+                href="https://wa.me/971586541274"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="custom-btn whatsapp-btn wobble-btn"
